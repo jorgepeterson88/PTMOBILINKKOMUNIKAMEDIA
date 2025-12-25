@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - PT MOBILINK KOMUNIKA MEDIA</title>
+    <meta name="description" content="Layanan lengkap PT MOBILINK KOMUNIKA MEDIA meliputi digital advertising, AI development, blockchain solutions, dan IT training">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ffc837 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-float {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .neon-glow {
+            text-shadow: 0 0 10px #f093fb, 0 0 20px #f093fb, 0 0 30px #f093fb;
+        }
+        
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 card-gradient">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">MOBILINK</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-pink-400 transition">Beranda</a>
+                    <a href="services.html" class="hover:text-pink-400 transition">Layanan</a>
+                    <a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a>
+                    <a href="about.html" class="hover:text-pink-400 transition">Tentang</a>
+                    <a href="contact.html" class="hover:text-pink-400 transition">Kontak</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 bg-opacity-95">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block hover:text-pink-400 transition">Beranda</a>
+                <a href="services.html" class="block hover:text-pink-400 transition">Layanan</a>
+                <a href="portfolio.html" class="block hover:text-pink-400 transition">Portfolio</a>
+                <a href="about.html" class="block hover:text-pink-400 transition">Tentang</a>
+                <a href="contact.html" class="block hover:text-pink-400 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center gradient-bg relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="neon-glow">Layanan Kami</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Solusi digital terintegrasi untuk transformasi bisnis Anda di era modern
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <div class="rotate-slow">
+                        <i class="fas fa-cogs text-4xl text-purple-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -5s;">
+                        <i class="fas fa-code text-4xl text-pink-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -10s;">
+                        <i class="fas fa-brain text-4xl text-yellow-400 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Solusi Komprehensif</span>
+                </h2>
+                <p class="text-xl text-gray-300">Layanan berkualitas tinggi untuk setiap kebutuhan digital Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Digital Advertising -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Digital Advertising</h3>
+                    <p class="text-gray-300 mb-4">Strategi periklanan digital yang inovatif untuk meningkatkan brand awareness dan konversi.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Social Media Marketing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Google Ads Management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Content Marketing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>SEO & SEM Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- AI Development -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Development</h3>
+                    <p class="text-gray-300 mb-4">Pemrograman berbasis kecerdasan artifisial untuk otomasi dan analisis cerdas.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Machine Learning Models</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Natural Language Processing</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Computer Vision</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Predictive Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Blockchain Solutions -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-blue-500 to-green-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-link text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Blockchain Solutions</h3>
+                    <p class="text-gray-300 mb-4">Pengembangan teknologi blockchain yang aman, transparan, dan efisien.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Smart Contract Development</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Cryptocurrency Solutions</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Supply Chain Management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>DeFi Applications</li>
+                    </ul>
+                </div>
+
+                <!-- Software Development -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-green-500 to-yellow-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Software Development</h3>
+                    <p class="text-gray-300 mb-4">Pengembangan perangkat lunak custom sesuai kebutuhan bisnis Anda.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Web Applications</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Mobile Apps Development</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Enterprise Software</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>API Development</li>
+                    </ul>
+                </div>
+
+                <!-- IT Training -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-yellow-500 to-red-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">IT Training</h3>
+                    <p class="text-gray-300 mb-4">Program pelatihan teknologi informasi untuk meningkatkan kompetensi tim.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Corporate Training</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Workshop Teknologi</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Certification Programs</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Custom Curriculum</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Content -->
+                <div class="card-gradient rounded-xl p-8 hover-float">
+                    <div class="w-20 h-20 mb-6 bg-gradient-to-r from-red-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-palette text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Digital Content</h3>
+                    <p class="text-gray-300 mb-4">Produksi konten digital berkualitas untuk berbagai platform.</p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Video Production</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Graphic Design</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Content Strategy</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>SMS Premium Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Teknologi Kami</span>
+                </h2>
+                <p class="text-xl text-gray-300">Menggunakan teknologi terkini untuk solusi terbaik</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-react text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">React</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-node-js text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">Node.js</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-python text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">Python</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-ethereum text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">Blockchain</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">AI/ML</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cloud text-3xl text-white"></i>
+                    </div>
+                    <p class="text-gray-300">Cloud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Proses Kami</span>
+                </h2>
+                <p class="text-xl text-gray-300">Metodologi terstruktur untuk hasil optimal</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Discovery</h3>
+                    <p class="text-gray-300">Memahami kebutuhan dan tujuan bisnis Anda</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Strategy</h3>
+                    <p class="text-gray-300">Mengembangkan strategi yang tepat sasaran</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-green-600 rounded-full flex items-center justify-center">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Implementation</h3>
+                    <p class="text-gray-300">Eksekusi proyek dengan standar tertinggi</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-yellow-600 rounded-full flex items-center justify-center">
+                        <span class="text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Optimization</h3>
+                    <p class="text-gray-300">Monitoring dan optimasi berkelanjutan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Siap Memulai Proyek Anda?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Konsultasikan kebutuhan digital Anda dengan tim ahli kami dan dapatkan solusi yang tepat untuk bisnis Anda.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-white text-gray-900 rounded-full font-bold hover:scale-105 transition pulse-animation">
+                    Hubungi Kami
+                </a>
+                <a href="portfolio.html" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:scale-105 transition">
+                    Lihat Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">MOBILINK</span>
+                    </div>
+                    <p class="text-gray-400">Creative Digital Solutions That Transform Your Business</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Digital Advertising</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">AI Development</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Blockchain Solutions</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">IT Training</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-pink-400 transition">Tentang Kami</a></li>
+                        <li><a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-400 transition">Kontak</a></li>
+                        <li><a href="careers.html" class="hover:text-pink-400 transition">Karir</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-pink-400 transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PT MOBILINK KOMUNIKA MEDIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

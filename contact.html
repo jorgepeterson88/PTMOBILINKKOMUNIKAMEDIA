@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - PT MOBILINK KOMUNIKA MEDIA</title>
+    <meta name="description" content="Hubungi PT MOBILINK KOMUNIKA MEDIA untuk konsultasi digital advertising, AI development, dan creative solutions">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ffc837 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-float {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .neon-glow {
+            text-shadow: 0 0 10px #f093fb, 0 0 20px #f093fb, 0 0 30px #f093fb;
+        }
+        
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .form-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            background: rgba(255,255,255,0.15);
+            border-color: #f093fb;
+            box-shadow: 0 0 20px rgba(240,147,251,0.3);
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 card-gradient">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">MOBILINK</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-pink-400 transition">Beranda</a>
+                    <a href="services.html" class="hover:text-pink-400 transition">Layanan</a>
+                    <a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a>
+                    <a href="about.html" class="hover:text-pink-400 transition">Tentang</a>
+                    <a href="contact.html" class="hover:text-pink-400 transition">Kontak</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 bg-opacity-95">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block hover:text-pink-400 transition">Beranda</a>
+                <a href="services.html" class="block hover:text-pink-400 transition">Layanan</a>
+                <a href="portfolio.html" class="block hover:text-pink-400 transition">Portfolio</a>
+                <a href="about.html" class="block hover:text-pink-400 transition">Tentang</a>
+                <a href="contact.html" class="block hover:text-pink-400 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center gradient-bg relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="neon-glow">Hubungi Kami</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Siap untuk mentransformasi bisnis Anda? Mari diskusikan proyek Anda dengan tim ahli kami
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <div class="rotate-slow">
+                        <i class="fas fa-envelope text-4xl text-purple-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -5s;">
+                        <i class="fas fa-phone text-4xl text-pink-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -10s;">
+                        <i class="fas fa-map-marker-alt text-4xl text-yellow-400 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="contact-card card-gradient rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Alamat</h3>
+                    <p class="text-gray-300">
+                        Cibis Nine Building Lantai 11<br>
+                        Jalan TB. Simatupang No. 2<br>
+                        Cilandak Timur, Pasar Minggu<br>
+                        Jakarta Selatan, DKI Jakarta 12560
+                    </p>
+                </div>
+
+                <div class="contact-card card-gradient rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-green-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-phone text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Telepon</h3>
+                    <p class="text-gray-300 mb-2">
+                        <strong>Office:</strong> +62 823-8246-6239<br>
+                        <strong>WhatsApp:</strong> +62 823-8246-6239<br>
+                        <strong>Hotline:</strong> 1500-123
+                    </p>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <a href="tel:+6282382466239" class="px-4 py-2 bg-green-500 rounded-full hover:bg-green-600 transition">
+                            <i class="fas fa-phone mr-2"></i>Call
+                        </a>
+                        <a href="https://wa.me/6282382466239" class="px-4 py-2 bg-green-600 rounded-full hover:bg-green-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-card card-gradient rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-green-500 to-yellow-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-envelope text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Email</h3>
+                    <p class="text-gray-300 mb-2">
+                        <strong>General:</strong> info@mobilinkkomunikamedia.co.id<br>
+                        <strong>Business:</strong> business@mobilinkkomunikamedia.co.id<br>
+                        <strong>Support:</strong> support@mobilinkkomunikamedia.co.id
+                    </p>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <a href="mailto:info@mobilinkkomunikamedia.co.id" class="px-4 py-2 bg-blue-500 rounded-full hover:bg-blue-600 transition">
+                            <i class="fas fa-envelope mr-2"></i>Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        <span class="text-gradient">Kirim Pesan</span>
+                    </h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Nama Lengkap *</label>
+                                <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email *</label>
+                                <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Telepon</label>
+                                <input type="tel" name="phone" class="form-input w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="+62 812-3456-7890">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Perusahaan</label>
+                                <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="PT Example">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Layanan yang Dibutuhkan *</label>
+                            <select name="service" required class="form-input w-full px-4 py-3 rounded-lg text-white">
+                                <option value="">Pilih Layanan</option>
+                                <option value="digital-advertising">Digital Advertising</option>
+                                <option value="ai-development">AI Development</option>
+                                <option value="blockchain">Blockchain Solutions</option>
+                                <option value="software-development">Software Development</option>
+                                <option value="it-training">IT Training</option>
+                                <option value="content-creation">Content Creation</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Budget Estimasi</label>
+                            <select name="budget" class="form-input w-full px-4 py-3 rounded-lg text-white">
+                                <option value="">Pilih Budget</option>
+                                <option value="50-100">50 Juta - 100 Juta</option>
+                                <option value="100-250">100 Juta - 250 Juta</option>
+                                <option value="250-500">250 Juta - 500 Juta</option>
+                                <option value="500+">500 Juta+</option>
+                                <option value="discuss">Diskusikan</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Pesan *</label>
+                            <textarea name="message" required rows="5" class="form-input w-full px-4 py-3 rounded-lg text-white placeholder-gray-400" placeholder="Ceritakan tentang proyek Anda..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="mr-2">
+                            <label for="newsletter" class="text-sm text-gray-300">Saya ingin menerima newsletter dan penawaran khusus</label>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-bold hover:scale-105 transition">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Kirim Pesan
+                        </button>
+                    </form>
+                    
+                    <div id="successMessage" class="hidden mt-6 p-4 bg-green-500 bg-opacity-20 border border-green-500 rounded-lg">
+                        <p class="text-green-400"><i class="fas fa-check-circle mr-2"></i>Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.</p>
+                    </div>
+                </div>
+
+                <!-- Map & Office Hours -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        <span class="text-gradient">Lokasi Kami</span>
+                    </h2>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="w-full h-96 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl overflow-hidden mb-8">
+                        <img src="https://picsum.photos/seed/jakarta-map/600/400.jpg" alt="Map" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Office Hours -->
+                    <div class="card-gradient rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Jam Operasional</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Senin - Jumat</span>
+                                <span class="text-white font-medium">09:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Sabtu</span>
+                                <span class="text-white font-medium">09:00 - 15:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Minggu & Hari Libur</span>
+                                <span class="text-gray-400">Tutup</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <h4 class="font-bold mb-3">Emergency Support</h4>
+                            <p class="text-gray-300 mb-3">Untuk keperluan mendesak, kami tersedia 24/7:</p>
+                            <a href="tel:+6282382466239" class="inline-flex items-center px-4 py-2 bg-red-500 rounded-full hover:bg-red-600 transition">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                +62 823-8246-6239
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-gradient">Ikuti Kami</span>
+                </h2>
+                <p class="text-xl text-gray-300">Dapatkan update terbaru tentang proyek dan promosi kami</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="#" class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="#" class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-gradient">Frequently Asked Questions</span>
+                </h2>
+                <p class="text-xl text-gray-300">Pertanyaan yang sering diajukan tentang layanan kami</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="card-gradient rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-bold">Berapa lama waktu pengerjaan proyek?</h3>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300">
+                        Waktu pengerjaan tergantung pada kompleksitas proyek. Untuk website standar 2-4 minggu, aplikasi mobile 2-6 bulan, dan AI solution 3-8 bulan.
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-bold">Apakah ada garansi untuk layanan?</h3>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300">
+                        Ya, kami memberikan garansi 3-6 bulan untuk bug fixing dan maintenance. Garansi dapat diperpanjang sesuai dengan kesepakatan kontrak.
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-bold">Bagaimana sistem pembayaran?</h3>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300">
+                        Kami menggunakan sistem milestone payment: 30% di awal, 40% di tengah proyek, dan 30% setelah proyek selesai. Bisa disesuaikan dengan kebutuhan klien.
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-bold">Apakah tersedia konsultasi gratis?</h3>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300">
+                        Ya, kami menyediakan konsultasi gratis 30 menit untuk diskusi awal tentang kebutuhan dan solusi yang tepat untuk bisnis Anda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">MOBILINK</span>
+                    </div>
+                    <p class="text-gray-400">Creative Digital Solutions That Transform Your Business</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Digital Advertising</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">AI Development</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Blockchain Solutions</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">IT Training</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-pink-400 transition">Tentang Kami</a></li>
+                        <li><a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-400 transition">Kontak</a></li>
+                        <li><a href="careers.html" class="hover:text-pink-400 transition">Karir</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-pink-400 transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PT MOBILINK KOMUNIKA MEDIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

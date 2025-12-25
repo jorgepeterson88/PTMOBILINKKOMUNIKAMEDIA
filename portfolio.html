@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - PT MOBILINK KOMUNIKA MEDIA</title>
+    <meta name="description" content="Portfolio PT MOBILINK KOMUNIKA MEDIA - Project terbaik dalam digital advertising, AI development, dan creative solutions">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ffc837 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-float {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(240, 147, 251, 0.9));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .neon-glow {
+            text-shadow: 0 0 10px #f093fb, 0 0 20px #f093fb, 0 0 30px #f093fb;
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            color: white;
+        }
+        
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 card-gradient">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">MOBILINK</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-pink-400 transition">Beranda</a>
+                    <a href="services.html" class="hover:text-pink-400 transition">Layanan</a>
+                    <a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a>
+                    <a href="about.html" class="hover:text-pink-400 transition">Tentang</a>
+                    <a href="contact.html" class="hover:text-pink-400 transition">Kontak</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 bg-opacity-95">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block hover:text-pink-400 transition">Beranda</a>
+                <a href="services.html" class="block hover:text-pink-400 transition">Layanan</a>
+                <a href="portfolio.html" class="block hover:text-pink-400 transition">Portfolio</a>
+                <a href="about.html" class="block hover:text-pink-400 transition">Tentang</a>
+                <a href="contact.html" class="block hover:text-pink-400 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center gradient-bg relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="neon-glow">Portfolio Kami</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Karya-karya terbaik kami yang menginspirasi dan memberikan dampak nyata bagi klien
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <div class="rotate-slow">
+                        <i class="fas fa-briefcase text-4xl text-purple-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -5s;">
+                        <i class="fas fa-trophy text-4xl text-pink-400 opacity-50"></i>
+                    </div>
+                    <div class="rotate-slow" style="animation-delay: -10s;">
+                        <i class="fas fa-star text-4xl text-yellow-400 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-12 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('all')">
+                    Semua
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('advertising')">
+                    Digital Advertising
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('ai')">
+                    AI Development
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('blockchain')">
+                    Blockchain
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('software')">
+                    Software
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-gray-600 hover:border-pink-400 transition" onclick="filterProjects('content')">
+                    Content
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+                
+                <!-- Digital Advertising Projects -->
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="advertising">
+                    <div class="relative h-64 bg-gradient-to-br from-pink-500 to-purple-600">
+                        <img src="https://picsum.photos/seed/ecommerce-campaign/400/300.jpg" alt="E-commerce Campaign" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">E-commerce Revolution</h3>
+                            <p class="text-center mb-4">Digital advertising campaign untuk brand fashion lokal</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Digital Ads</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Social Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="advertising">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-500 to-blue-600">
+                        <img src="https://picsum.photos/seed/brand-awareness/400/300.jpg" alt="Brand Awareness" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Tech Startup Launch</h3>
+                            <p class="text-center mb-4">360° marketing campaign untuk startup teknologi</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Branding</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Content</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Development Projects -->
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="ai">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-500 to-green-600">
+                        <img src="https://picsum.photos/seed/ai-chatbot/400/300.jpg" alt="AI Chatbot" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Smart Customer Service</h3>
+                            <p class="text-center mb-4">AI-powered chatbot untuk layanan pelanggan 24/7</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">AI/ML</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="ai">
+                    <div class="relative h-64 bg-gradient-to-br from-green-500 to-yellow-600">
+                        <img src="https://picsum.photos/seed/predictive-analytics/400/300.jpg" alt="Predictive Analytics" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Sales Prediction System</h3>
+                            <p class="text-center mb-4">Machine learning model untuk prediksi penjualan</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Analytics</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Projects -->
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="blockchain">
+                    <div class="relative h-64 bg-gradient-to-br from-yellow-500 to-red-600">
+                        <img src="https://picsum.photos/seed/supply-chain/400/300.jpg" alt="Supply Chain" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Supply Chain Transparency</h3>
+                            <p class="text-center mb-4">Blockchain solution untuk transparency supply chain</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Blockchain</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="blockchain">
+                    <div class="relative h-64 bg-gradient-to-br from-red-500 to-purple-600">
+                        <img src="https://picsum.photos/seed/digital-wallet/400/300.jpg" alt="Digital Wallet" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Digital Wallet Platform</h3>
+                            <p class="text-center mb-4">Cryptocurrency wallet dengan multi-chain support</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">DeFi</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Web3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Development Projects -->
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="software">
+                    <div class="relative h-64 bg-gradient-to-br from-indigo-500 to-blue-600">
+                        <img src="https://picsum.photos/seed/erp-system/400/300.jpg" alt="ERP System" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Enterprise ERP System</h3>
+                            <p class="text-center mb-4">Custom ERP solution untuk manufacturing company</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Web App</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Enterprise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="software">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-500 to-teal-600">
+                        <img src="https://picsum.photos/seed/mobile-app/400/300.jpg" alt="Mobile App" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Food Delivery App</h3>
+                            <p class="text-center mb-4">Mobile application untuk food delivery service</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Mobile</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">iOS/Android</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Creation Projects -->
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="content">
+                    <div class="relative h-64 bg-gradient-to-br from-teal-500 to-green-600">
+                        <img src="https://picsum.photos/seed/video-production/400/300.jpg" alt="Video Production" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Brand Documentary</h3>
+                            <p class="text-center mb-4">Video documentary untuk corporate branding</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Video</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden hover-float" data-category="content">
+                    <div class="relative h-64 bg-gradient-to-br from-green-500 to-orange-600">
+                        <img src="https://picsum.photos/seed/social-media/400/300.jpg" alt="Social Media" class="w-full h-full object-cover">
+                        <div class="overlay">
+                            <h3 class="text-2xl font-bold mb-2">Social Media Campaign</h3>
+                            <p class="text-center mb-4">Content strategy untuk 1M+ social media reach</p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Content</span>
+                                <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Pencapaian Kami</span>
+                </h2>
+                <p class="text-xl text-gray-300">Angka-angka yang berbicara tentang kualitas kerja kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">500+</div>
+                    <p class="text-gray-300">Proyek Selesai</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">200+</div>
+                    <p class="text-gray-300">Klien Puas</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">50+</div>
+                    <p class="text-gray-300">Penghargaan</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">15+</div>
+                    <p class="text-gray-300">Tahun Pengalaman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient">Testimoni Klien</span>
+                </h2>
+                <p class="text-xl text-gray-300">Apa kata klien tentang kerja sama dengan kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-gradient rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-4">"Tim MOBILINK sangat profesional dan kreatif. Mereka berhasil meningkatkan brand awareness kami hingga 300% dalam 6 bulan."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">John Doe</h4>
+                            <p class="text-gray-400 text-sm">CEO TechStart</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-gradient rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-4">"AI solution yang mereka kembangkan sangat membantu operasional kami. Efisiensi meningkat hingga 40%."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">SM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Miller</h4>
+                            <p class="text-gray-400 text-sm">CTO LogisticsPro</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-gradient rounded-xl p-6">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-4">"Creative campaign yang mereka buat viral dan meningkatkan penjualan kami secara signifikan. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">RJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Robert Johnson</h4>
+                            <p class="text-gray-400 text-sm">Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Siap Membuat Project Anda Berikutnya?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Mari wujudkan ide kreatif Anda menjadi solusi digital yang menginspirasi
+            </p>
+            <a href="contact.html" class="px-8 py-4 bg-white text-gray-900 rounded-full font-bold hover:scale-105 transition">
+                Mulai Proyek Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">MOBILINK</span>
+                    </div>
+                    <p class="text-gray-400">Creative Digital Solutions That Transform Your Business</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Digital Advertising</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">AI Development</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">Blockchain Solutions</a></li>
+                        <li><a href="services.html" class="hover:text-pink-400 transition">IT Training</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-pink-400 transition">Tentang Kami</a></li>
+                        <li><a href="portfolio.html" class="hover:text-pink-400 transition">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-400 transition">Kontak</a></li>
+                        <li><a href="careers.html" class="hover:text-pink-400 transition">Karir</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-pink-400 transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PT MOBILINK KOMUNIKA MEDIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        function filterProjects(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(category) || 
+                    (category === 'all' && btn.textContent === 'Semua')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
